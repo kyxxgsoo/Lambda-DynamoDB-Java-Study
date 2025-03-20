@@ -1,0 +1,69 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda CRUD API
+
+Globals:
+  Function:
+    Timeout: 20
+    MemorySize: 512
+
+Resources:
+  CreateUserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: helloworld.user.create.CreateUserHandler::handleRequest
+      Runtime: java17
+      CodeUri: HelloWorldFunction
+      MemorySize: 512
+      Timeout: 15
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /user/create
+            Method: post
+
+#  ReadUserFunction:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Handler: helloworld.user.read.ReadUserHandler::handleRequest
+#      Runtime: java17
+#      CodeUri: .
+#      MemorySize: 512
+#      Timeout: 15
+#      Events:
+#        Api:
+#          Type: Api
+#          Properties:
+#            Path: /user/read
+#            Method: get
+#
+#  UpdateUserFunction:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Handler: helloworld.user.update.UpdateUserHandler::handleRequest
+#      Runtime: java17
+#      CodeUri: .
+#      MemorySize: 512
+#      Timeout: 15
+#      Events:
+#        Api:
+#          Type: Api
+#          Properties:
+#            Path: /user/update
+#            Method: put
+#
+#  DeleteUserFunction:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Handler: helloworld.user.delete.DeleteUserHandler::handleRequest
+#      Runtime: java17
+#      CodeUri: .
+#      MemorySize: 512
+#      Timeout: 15
+#      Events:
+#        Api:
+#          Type: Api
+#          Properties:
+#            Path: /user/delete
+#            Method: delete

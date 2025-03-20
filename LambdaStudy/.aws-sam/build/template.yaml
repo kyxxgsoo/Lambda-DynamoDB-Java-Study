@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda CRUD API
+Globals:
+  Function:
+    Timeout: 20
+    MemorySize: 512
+Resources:
+  CreateUserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: helloworld.user.create.CreateUserHandler::handleRequest
+      Runtime: java17
+      CodeUri: CreateUserFunction
+      MemorySize: 512
+      Timeout: 15
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /user/create
+            Method: post
+    Metadata:
+      SamResourceId: CreateUserFunction

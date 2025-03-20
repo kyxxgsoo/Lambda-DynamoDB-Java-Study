@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="helloworld.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-20T10:17:12.367Z" hostname="Macbook-m3-Pro-K.local" time="0.519">
+  <properties/>
+  <testcase name="successfulResponse" classname="helloworld.AppTest" time="0.519"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
